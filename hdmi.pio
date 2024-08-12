@@ -1,0 +1,30 @@
+
+; Inspired by / adapted from / copied from:
+; https://github.com/Wren6991/PicoDVI/blob/master/software/libdvi/dvi_serialiser.pio
+
+.program hdmi
+.side_set 2
+.origin 0
+.wrap_target
+    out pc, 1 side 0b10
+    out pc, 1 side 0b01
+.wrap
+
+% c-sdk {
+
+static inline void hdmi_pio_init(PIO pio, uint sm, uint offset, uint pinbase) {
+    pio_sm_set_pins_with_mask(pio, sm, 0b01 << pinbase, 0b11 << pinbase);
+    pio_sm_set_pindirs_with_mask(pio, sm, 0b11 << pinbase, 0b11 << pinbase);
+    pio_gpio_init(pio, pinbase);
+    pio_gpio_init(pio, pinbase + 1);
+    pio_sm_config c = hdmi_program_get_default_config(offset);
+    sm_config_set_sideset(&c, 2, false, false);
+    sm_config_set_sideset_pins(&c, pinbase);
+    sm_config_set_clkdiv(&c, 1);
+    sm_config_set_out_shift(&c, true, true, 20);
+    sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
+    pio_sm_init(pio, sm, offset, &c);
+    pio_sm_set_enabled(pio, sm, true);
+}
+
+%}
