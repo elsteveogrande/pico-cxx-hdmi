@@ -1,0 +1,7 @@
+-xc++
+-std=c++23
+-Wall
+-Wextra
+-Os
+-Wno-deprecated-volatile
+-nostdlib
