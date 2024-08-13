@@ -1,7 +1,11 @@
 -xc++
 -std=c++23
+-target
+arm-none-eabi
 -Wall
 -Wextra
--Os
+-Og
 -Wno-deprecated-volatile
 -nostdlib
+-isystem
+./pico-cxx-base

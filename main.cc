@@ -1,22 +1,6 @@
-#include <hardware/clocks.h>
-#include <hardware/dma.h>
-#include <hardware/gpio.h>
-#include <hardware/irq.h>
-#include <hardware/regs/intctrl.h>
-#include <hardware/structs/dma.h>
-#include <hardware/vreg.h>
-#include <pico.h>
-#include <pico/multicore.h>
-#include <pico/stdio.h>
-#include <pico/stdlib.h>
-#include <pico/time.h>
+#include <picobase/Types.h>
+#include <picobase/Voltage.h>
 
-#include <cstdint>
-#include <cstdlib>
-#include <cstring>
-
-#include "boards/pico.h"
-#include "build/hdmi.pio.h"
 #include "pixel.h"
 
 #define PURE __attribute__((__pure__))

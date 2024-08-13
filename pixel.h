@@ -1,14 +1,14 @@
 #pragma once
 
-#include <cstdint>
+#include <picobase/Types.h>
 
 struct Pixel10 {
-    uint16_t b: 10;
+    u16 b : 10;
 };
 static_assert(sizeof(Pixel10) == 2);
 
 struct Pixel20 {
-    uint32_t b: 20;
+    u32 b : 20;
 };
 static_assert(sizeof(Pixel20) == 4);
 
@@ -30,19 +30,15 @@ struct Buffer {
 
     void set(int index, Pixel10 p10) {
         if (index & 1) {
-            pxs[index >> 1].b |= (uint32_t(p10.b)) << 10;
+            pxs[index >> 1].b |= (u32(p10.b)) << 10;
         } else {
-            pxs[index >> 1].b = uint32_t(p10.b);
+            pxs[index >> 1].b = u32(p10.b);
         }
     }
 
-    void set(int index, Pixel20 p20) {
-        pxs[index >> 1] = p20;
-    }
+    void set(int index, Pixel20 p20) { pxs[index >> 1] = p20; }
 
-    void set2(int index, Pixel20 p20) {
-        pxs[index] = p20;
-    }
+    void set2(int index, Pixel20 p20) { pxs[index] = p20; }
 };
 
 struct Buffers {
