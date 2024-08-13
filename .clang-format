@@ -1,0 +1,15 @@
+---
+BasedOnStyle: Google
+AccessModifierOffset: -4
+DerivePointerAlignment: false
+IndentWidth: 4
+ReferenceAlignment: Left
+AllowShortLoopsOnASingleLine: 'true'
+AllowShortBlocksOnASingleLine: 'true'
+AllowShortCaseLabelsOnASingleLine: 'true'
+ConstructorInitializerAllOnOneLineOrOnePerLine: 'false'
+ConstructorInitializerIndentWidth: '8'
+ContinuationIndentWidth: '8'
+BreakConstructorInitializers: 'BeforeComma'
+SpaceBeforeCpp11BracedList: 'true'
+AllowAllConstructorInitializersOnNextLine: 'true'
