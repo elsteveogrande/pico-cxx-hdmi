@@ -2,4 +2,7 @@ build/
 random/
 .cache/
 .mypy_cache/
-
+*.o
+*.s
+hdmi.bin
+hdmi.bin.uf2

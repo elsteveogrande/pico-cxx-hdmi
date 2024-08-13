@@ -4,8 +4,11 @@
 arm-none-eabi
 -Wall
 -Wextra
--Og
+-Oz
+-fno-exceptions
 -Wno-deprecated-volatile
+-Wno-unused-command-line-argument
 -nostdlib
 -isystem
 ./pico-cxx-base
+-g0
