@@ -11,4 +11,4 @@ arm-none-eabi
 -nostdlib
 -isystem
 ./pico-cxx-base
--g0
+-g1

@@ -1,8 +1,0 @@
--Wno-unused-command-line-argument
--target
-arm-none-eabi
--Wl,-T
--Wl,layout.ld
--fuse-ld=lld
--nostdlib
--g0
